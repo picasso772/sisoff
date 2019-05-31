@@ -1,0 +1,60 @@
+1@ Tôi thích lắp ráp các đồ nội thất.
+2@ Tôi thích nghiên cứu về thiên văn học.
+3@ Tôi thích tạo ra các tác phẩm hội họa.
+4@ Tôi thích giúp những người gặp khó khăn hoặc có nhu cầu đặc biệt.
+5@ Tôi thích dẫn dắt, lãnh đạo người khác.
+6@ Tôi thích sắp xếp các tài liệu và ghi chép thống kê.
+7@ Tôi thích sửa chữa đồ đạc trong nhà.
+8@ Tôi thích làm các xét nghiệm để chẩn đoán bệnh.
+9@ Tôi thích thiết kết ảnh minh họa cho tạp chí, báo.
+10@ Tôi thích giúp người có các vấn đề thể chất, tinh thần hoặc các vấn đề cá nhân.
+11@ Tôi thích đưa ra các quyết định quan trọng có ảnh hưởng tới nhiều người.
+12@ Tôi thích cập nhật các văn bản hoặc các bản thống kê.
+13@ Tôi thích lắp ráp máy móc, sửa chữa xe cộ.
+14@ Tôi thích làm việc trong phòng thí nghiệm hoặc cơ quan nghiên cứu.
+15@ Tôi thích thiết kế sân khấu.
+16@ Tôi thích dạy trẻ có nhu cầu đặc biệt (trẻ tự kỉ, chậm phát triển).
+17@ Tôi thích tranh luận về các vấn đề trước công chúng.
+18@ Tôi thích viết các email hành chính.
+19@ Tôi thích lắp ráp thiết bị điện tử.
+20@ Tôi thích nghiên cứu về cấu tạo cơ thể con người.
+21@ Tôi thích dựng sân khấu.
+22@ Tôi thích chăm sóc người ốm.
+23@ Tôi thích thuyết phục người khác thay đổi quan điểm của họ.
+24@ Tôi thích học khóa tập huấn về thống kê lưu trữ.
+25@ Tôi thích lắp ráp, sửa chữa các phương tiện giao thông.
+26@ Tôi thích nghiên cứu về hành vi của động vật.
+27@ Tôi thích viết kịch bản phim hoặc chương trình truyền hình.
+28@ Tôi thích giúp người khác phục hồi các chức năng vận động, giao tiếp.
+29@ Tôi thích khởi động dự án kinh doanh của mình.
+30@ Tôi thích theo dõi hoạt động và tính bảng lương cho nhân viên.
+31@ Tôi thích vận hành các loại máy móc (bấm nút, điều khiển).
+32@ Tôi thích thực hiện nghiên cứu trên thực vật và động vật.
+33@ Tôi thích biên tập các bộ phim.
+34@ Tôi thích chăm sóc trẻ em tại các trung tâm bảo trợ xã hội.
+35@ Tôi thích đàm phán hợp đồng kinh doanh.
+36@ Tôi thích lập bảng dự toán cho công ty, dự án, tổ chức.
+37@ Tôi thích làm những công việc sử dụng khoan, búa, đục, v.v.	.
+38@ Tôi thích phát triển phương pháp hoặc cách điều trị mới.
+39@ Tôi thích biên tập sách, báo, tạp chí.
+40@ Tôi thích tham gia các hoạt động xã hội.
+41@ Tôi thích tìm hiểu các chiến lược để kinh doanh thành công.
+42@ Tôi thích quản lý hệ thống dữ liệu.
+43@ Tôi thích tham gia các khóa học về công nghệ điện tử.
+44@ Tôi thích nghiên cứu về di truyền học.
+45@ Tôi thích tham gia lớp học nghệ thuật hoặc thiết kế.
+46@ Tôi thích tư vấn cho những người đang gặp khó khăn.
+47@ Tôi thích gặp gỡ và trao đổi với các nhà quản lý và nhà lãnh đạo quan trọng.
+48@ Tôi thích phụ trách văn phòng.
+49@ Tôi thích tham gia các khóa học về máy móc, cơ khí.
+50@ Tôi thích xác định tỉ lệ truyền nhiễm của một loại bệnh mới.
+51@ Tôi thích thiết kế đồ họa.
+52@ Tôi thích tham gia vào các hoạt động từ thiện.
+53@ Tôi thích tham gia khóa học về quản lý hoặc lãnh đạo.
+54@ Tôi thích xử lý các giao dịch ngân hàng của khách hàng.
+55@ Tôi thích bảo dưỡng các loại công cụ, trang thiết bị.
+56@ Tôi thích chẩn đoán và chữa bệnh cho động vật.
+57@ Tôi thích viết bài cho tạp chí hoặc báo văn học, nghệ thuật.
+58@ Tôi thích giám sát trẻ trong các hoạt động ngoại khóa.
+59@ Tôi thích trình bày các bài phát biểu, diễn thuyết.
+60@ Tôi thích lưu giữ các hồ sơ kiểm kê hàng hoá.
