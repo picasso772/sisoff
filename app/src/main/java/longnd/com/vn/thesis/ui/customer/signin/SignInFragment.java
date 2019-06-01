@@ -43,7 +43,7 @@ public class SignInFragment extends BaseFragment<SignInViewModel, FragmentSignIn
         if (lockLogin != 0) {
             if ((currentTimeMillis - lockLogin) < Fields.TIME_LOCK_LOGIN) {
                 binding.tvErrorLogin.setVisibility(View.VISIBLE);
-                binding.tvErrorLogin.setText("Thiết bị của bạn tạm thời đang bị khoá");
+                binding.tvErrorLogin.setText("Thiết bị của bạn tạm thời đang bị khoá đăng nhập");
                 lockLogin();
             }
         }
@@ -115,6 +115,7 @@ public class SignInFragment extends BaseFragment<SignInViewModel, FragmentSignIn
                 Utils.onSaveCustomerInSharedPrefs(customer.getEmail(), customer.getPass());
                 DataUtils.getInstance().setCustomer(customerObjectResponse.getData());
                 binding.tvErrorLogin.setVisibility(View.GONE);
+                countDownLogin = Fields.MAX_LOGIN_ERROR;
                 onOpenCustomer.openCustomer();
                 break;
             case Define.ResponseStatus.ERROR:
@@ -141,9 +142,11 @@ public class SignInFragment extends BaseFragment<SignInViewModel, FragmentSignIn
         this.onOpenCustomer = onOpenCustomer;
     }
 
-    private void lockLogin(){
+    private void lockLogin() {
         binding.btnSignIn.setEnabled(false);
         binding.tvSignUp.setEnabled(false);
+        binding.editEmail.setEnabled(false);
+        binding.editPass.setEnabled(false);
     }
 
 }
