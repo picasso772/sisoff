@@ -1,8 +1,8 @@
 package longnd.com.vn.thesis.data.entity;
 
 public class APoint {
-    float x;
-    float y;
+    private float x;
+    private float y;
 
     public APoint() {
 

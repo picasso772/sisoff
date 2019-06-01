@@ -17,7 +17,7 @@ import longnd.com.vn.thesis.utils.ToastUtils;
 import longnd.com.vn.thesis.utils.Utils;
 
 public class SignInFragment extends BaseFragment<SignInViewModel, FragmentSignInBinding> {
-    private Customer customer;
+
     private OnOpenCustomer onOpenCustomer;
     private int countDownLogin = Fields.MAX_LOGIN_ERROR;
 
@@ -41,10 +41,13 @@ public class SignInFragment extends BaseFragment<SignInViewModel, FragmentSignIn
 
         long lockLogin = SharedPrefs.getInstance().getLong(Define.SharedPref.KEY_TIME_LOCK_LOGIN, 0);
         if (lockLogin != 0) {
-            if ((currentTimeMillis - lockLogin) < Fields.TIME_LOCK_LOGIN) {
+            if ((getCurrentTimeMillis() - lockLogin) < Fields.TIME_LOCK_LOGIN) {
                 binding.tvErrorLogin.setVisibility(View.VISIBLE);
                 binding.tvErrorLogin.setText("Thiết bị của bạn tạm thời đang bị khoá đăng nhập");
-                lockLogin();
+                actionKeyLogin(false);
+            } else {
+                binding.tvErrorLogin.setVisibility(View.GONE);
+                actionKeyLogin(true);
             }
         }
     }
@@ -123,9 +126,9 @@ public class SignInFragment extends BaseFragment<SignInViewModel, FragmentSignIn
                 PsyLoading.getInstance(getContext()).hidden();
                 ToastUtils.showToastError(getContext());
                 if (countDownLogin <= 1) {
-                    SharedPrefs.getInstance().putLong(Define.SharedPref.KEY_TIME_LOCK_LOGIN, currentTimeMillis);
+                    SharedPrefs.getInstance().putLong(Define.SharedPref.KEY_TIME_LOCK_LOGIN, getCurrentTimeMillis());
                     binding.tvErrorLogin.setText("Thiết bị của bạn đã bị khoá đăng nhập trong 5 phút!");
-                    lockLogin();
+                    actionKeyLogin(false);
                 } else {
                     countDownLogin--;
                     if (countDownLogin <= 3) {
@@ -142,11 +145,16 @@ public class SignInFragment extends BaseFragment<SignInViewModel, FragmentSignIn
         this.onOpenCustomer = onOpenCustomer;
     }
 
-    private void lockLogin() {
-        binding.btnSignIn.setEnabled(false);
-        binding.tvSignUp.setEnabled(false);
-        binding.editEmail.setEnabled(false);
-        binding.editPass.setEnabled(false);
+    /**
+     * Use to lock or open the login function
+     *
+     * @param key true : Open login
+     *            false : Lock login
+     */
+    private void actionKeyLogin(boolean key) {
+        binding.btnSignIn.setEnabled(key);
+        binding.tvSignUp.setEnabled(key);
+        binding.editEmail.setEnabled(key);
+        binding.editPass.setEnabled(key);
     }
-
 }

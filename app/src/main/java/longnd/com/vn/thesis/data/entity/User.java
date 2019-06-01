@@ -29,9 +29,6 @@ public class User {
     }
 
     public boolean isEmpty() {
-        if (email == null || pass == null) {
-            return true;
-        }
-        return false;
+        return email == null || pass == null;
     }
 }

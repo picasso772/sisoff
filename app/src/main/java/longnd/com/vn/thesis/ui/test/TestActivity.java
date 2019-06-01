@@ -84,7 +84,6 @@ public class TestActivity extends BaseActivity<TestViewModel, ActivityTestBindin
     public void onBackPressed() {
         super.onBackPressed();
         PsyLoading.getInstance(this).destroyLoadingDialog();
-        // overridePendingTransition(R.anim.no_anim, R.anim.fade_right);
     }
 
     @Override

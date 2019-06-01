@@ -31,6 +31,7 @@ public class HistoryFragment extends BaseFragment<HistoryViewModel, FragmentHist
     private HistoryAdapter adapter;
     private Intent intent;
     private Bundle bundle;
+    private static final String KEY_BUNDLE = "EVALUATE";
 
     @Override
     protected void initListenerOnClick() {
@@ -98,7 +99,7 @@ public class HistoryFragment extends BaseFragment<HistoryViewModel, FragmentHist
                 viewModel.setResultPsycho(null);
                 intent.putExtra(Fields.KEY_TYPE, Define.Question.TYPE_PSY_POCHOLIGICAL);
                 bundle.putSerializable(Fields.KEY_VALUE, resultPsycho.getData());
-                intent.putExtra("QUA", bundle);
+                intent.putExtra(KEY_BUNDLE, bundle);
                 startActivity(intent);
                 break;
             case Define.ResponseStatus.ERROR:
@@ -121,7 +122,7 @@ public class HistoryFragment extends BaseFragment<HistoryViewModel, FragmentHist
                 viewModel.setResultRiasec(null);
                 intent.putExtra(Fields.KEY_TYPE, Define.Question.TYPE_RIASEC);
                 bundle.putSerializable(Fields.KEY_VALUE, resultRiasecObjectResponse.getData());
-                intent.putExtra("QUA", bundle);
+                intent.putExtra(KEY_BUNDLE, bundle);
                 startActivity(intent);
                 break;
             case Define.ResponseStatus.ERROR:
@@ -144,7 +145,7 @@ public class HistoryFragment extends BaseFragment<HistoryViewModel, FragmentHist
                 viewModel.setResultNeo(null);
                 intent.putExtra(Fields.KEY_TYPE, Define.Question.TYPE_NEO);
                 bundle.putSerializable(Fields.KEY_VALUE, resultNeoObjectResponse.getData());
-                intent.putExtra("QUA", bundle);
+                intent.putExtra(KEY_BUNDLE, bundle);
                 startActivity(intent);
                 break;
             case Define.ResponseStatus.ERROR:

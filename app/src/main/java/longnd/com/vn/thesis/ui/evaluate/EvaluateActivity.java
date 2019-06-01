@@ -33,6 +33,7 @@ public class EvaluateActivity extends BaseActivity<EvaluateViewModel, ActivityEv
     private int[] results;
     private ResultNeo resultNeo;
     private ResultRiasec resultRiasec;
+    private static final String KEY_BUNDLE = "EVALUATE";
 
     @Override
     protected void initView() {
@@ -45,7 +46,7 @@ public class EvaluateActivity extends BaseActivity<EvaluateViewModel, ActivityEv
         if (type == -1) {
             return;
         }
-        if (intent.getBundleExtra("QUA").getSerializable(Fields.KEY_VALUE) == null) {
+        if (intent.getBundleExtra(KEY_BUNDLE).getSerializable(Fields.KEY_VALUE) == null) {
             return;
         }
 
@@ -62,7 +63,7 @@ public class EvaluateActivity extends BaseActivity<EvaluateViewModel, ActivityEv
         switch (type) {
             case Define.Question.TYPE_NEO:
                 results = new int[5];
-                resultNeo = (ResultNeo) intent.getBundleExtra("QUA").getSerializable(Fields.KEY_VALUE);
+                resultNeo = (ResultNeo) intent.getBundleExtra(KEY_BUNDLE).getSerializable(Fields.KEY_VALUE);
                 // type : 0 - A, 1 - C, 2 - O, 3 - N, 4 - E
                 results[0] = resultNeo.getAgreeableness();
                 results[1] = resultNeo.getConscientiousness();
@@ -72,7 +73,7 @@ public class EvaluateActivity extends BaseActivity<EvaluateViewModel, ActivityEv
                 break;
             case Define.Question.TYPE_RIASEC:
                 results = new int[6];
-                resultRiasec = (ResultRiasec) intent.getBundleExtra("QUA").getSerializable(Fields.KEY_VALUE);
+                resultRiasec = (ResultRiasec) intent.getBundleExtra(KEY_BUNDLE).getSerializable(Fields.KEY_VALUE);
                 // type: 0 - rule, 1- society, 2 - discover, 3 - reality, 4 - art, 5 - convince
                 results[0] = resultRiasec.getRule();
                 results[1] = resultRiasec.getSociety();
@@ -82,7 +83,7 @@ public class EvaluateActivity extends BaseActivity<EvaluateViewModel, ActivityEv
                 results[5] = resultRiasec.getConvince();
                 break;
             case Define.Question.TYPE_PSY_POCHOLIGICAL:
-                DataUtils.getInstance().resultPsychological = (ResultPsychological) intent.getBundleExtra("QUA").getSerializable(Fields.KEY_VALUE);
+                DataUtils.getInstance().resultPsychological = (ResultPsychological) intent.getBundleExtra(KEY_BUNDLE).getSerializable(Fields.KEY_VALUE);
                 break;
         }
     }
@@ -123,7 +124,7 @@ public class EvaluateActivity extends BaseActivity<EvaluateViewModel, ActivityEv
         canvas.drawCircle(50, 50, 30, paint);
         paint.setColor(Color.BLACK);
         canvas.drawText("LONG ND", 80, 50, paint);
-        //canvas.drawt
+
         // finish the page
         document.finishPage(page);
         // draw text on the graphics object of the page

@@ -25,14 +25,8 @@ public class QuestionPagerAdapter extends PagerAdapter {
     private List<Question> questions;
     private Context context;
     private SaveResult saveResult;
-    private RadioGroup rGroup;
-    private TextView tvContent;
-    private TextView tvTheme;
     private TestStepTwoViewModel viewModel;
     private int type;
-
-    private RadioButton[] btnRadio;
-    private View[] seperator;
 
     public QuestionPagerAdapter(Context context, List<Question> questions, TestStepTwoViewModel viewModel, int type) {
         this.context = context;
@@ -44,13 +38,12 @@ public class QuestionPagerAdapter extends PagerAdapter {
     @NonNull
     @Override
     public Object instantiateItem(@NonNull ViewGroup container, int position) {
-        Log.d("QUANGANH", "instantiateItem: " + position);
         View view = LayoutInflater.from(context).inflate(R.layout.detail_question, container, false);
-        tvContent = view.findViewById(R.id.tvContent);
+        TextView tvContent = view.findViewById(R.id.tvContent);
         tvContent.setTypeface(Utils.getTypeFace(context, Fields.FONT_TIMES));
-        tvTheme = view.findViewById(R.id.tvTheme);
+        TextView tvTheme = view.findViewById(R.id.tvTheme);
 
-        btnRadio = new RadioButton[]{
+        RadioButton[] btnRadio = new RadioButton[]{
                 view.findViewById(R.id.btnResult01),
                 view.findViewById(R.id.btnResult02),
                 view.findViewById(R.id.btnResult03),
@@ -64,7 +57,7 @@ public class QuestionPagerAdapter extends PagerAdapter {
                 view.findViewById(R.id.btnResult11)
         };
 
-        seperator = new View[]{
+        View[] seperator = new View[]{
                 view.findViewById(R.id.seperator1),
                 view.findViewById(R.id.seperator2),
                 view.findViewById(R.id.seperator3),
@@ -113,29 +106,7 @@ public class QuestionPagerAdapter extends PagerAdapter {
         }
 
         container.addView(view);
-        rGroup = view.findViewById(R.id.layoutResult);
-
-//        if (viewModel.getDataResults(position) != -1) {
-//            switch (viewModel.getDataResults(position)) {
-//                case 0:
-//                    btn01.setChecked(true);
-//                    break;
-//                case 1:
-//                    btn02.setChecked(true);
-//                    break;
-//                case 2:
-//                    btn03.setChecked(true);
-//                    break;
-//                case 3:
-//                    btn04.setChecked(true);
-//                    break;
-//                case 4:
-//                    btn05.setChecked(true);
-//                    break;
-//                default:
-//                    break;
-//            }
-//        }
+        RadioGroup rGroup = view.findViewById(R.id.layoutResult);
 
         if (viewModel.getDataResults(position) != -1) {
             btnRadio[viewModel.getDataResults(position)].setChecked(true);
@@ -207,7 +178,6 @@ public class QuestionPagerAdapter extends PagerAdapter {
 
     @Override
     public void notifyDataSetChanged() {
-        Log.d("QUANGANH", "notifyDataSetChanged: vào đây");
         super.notifyDataSetChanged();
     }
 
