@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
+
 import longnd.com.vn.thesis.ui.evaluate.charts.ChartsFragment;
 import longnd.com.vn.thesis.ui.evaluate.detail.DetailFragment;
 
@@ -16,8 +17,8 @@ public class EvaluatePagerAdapter extends FragmentStatePagerAdapter {
     @NonNull
     @Override
     public Fragment getItem(int position) {
-        Fragment frag=null;
-        switch (position){
+        Fragment frag = null;
+        switch (position) {
             case 0:
                 frag = new ChartsFragment();
                 break;

@@ -60,7 +60,7 @@ public class PsyLoading {
             dialog.setCanceledOnTouchOutside(false);
             dialog.setOnKeyListener((dialog, keyCode, event) -> {
                 if (keyCode == KeyEvent.KEYCODE_BACK) {
-                    // we cannot close dialog when we press back button
+                    // TODO : do nothing
                 }
                 return false;
             });
@@ -86,7 +86,7 @@ public class PsyLoading {
             dialog.setCanceledOnTouchOutside(false);
             dialog.setOnKeyListener((dialog, keyCode, event) -> {
                 if (keyCode == KeyEvent.KEYCODE_BACK) {
-                    // we cannot close dialog when we press back button
+                    // TODO : do nothing
                 }
                 return false;
             });

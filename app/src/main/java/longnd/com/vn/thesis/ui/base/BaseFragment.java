@@ -14,6 +14,7 @@ import androidx.databinding.ViewDataBinding;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProviders;
+
 import dagger.android.support.AndroidSupportInjection;
 import longnd.com.vn.thesis.di.ViewModelFactory;
 import longnd.com.vn.thesis.ui.evaluate.EvaluateViewModel;
@@ -35,7 +36,7 @@ public abstract class BaseFragment<T extends ViewModel, V extends ViewDataBindin
     protected TestViewModel testViewModel;
     protected EvaluateViewModel evaluateViewModel;
 
-    protected static long currentTimeMillis = System.currentTimeMillis();
+    private long currentTimeMillis;
 
     @Override
     public void onAttach(@NonNull Context context) {
@@ -92,4 +93,7 @@ public abstract class BaseFragment<T extends ViewModel, V extends ViewDataBindin
         editText.requestFocus();
     }
 
+    protected long getCurrentTimeMillis() {
+        return System.currentTimeMillis();
+    }
 }

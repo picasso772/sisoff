@@ -44,11 +44,11 @@ public class ShowResultPsyAdapter extends RecyclerView.Adapter<ShowResultPsyAdap
         return results.length;
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    class ViewHolder extends RecyclerView.ViewHolder {
         TextView title;
         TextView message;
 
-        public ViewHolder(View itemView) {
+        ViewHolder(View itemView) {
             super(itemView);
             title = itemView.findViewById(R.id.title);
             title.setTypeface(Utils.getTypeFace(context, Fields.FONT_TIMES));

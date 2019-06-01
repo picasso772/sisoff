@@ -42,7 +42,6 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.HistoryH
     @Override
     public void onBindViewHolder(@NonNull HistoryHolder holder, int position) {
         holder.tvTitle.setTypeface(Utils.getTypeFace(context, Fields.FONT_TIMES));
-        // set data
         switch (results.get(position).getType()) {
             case Define.Question.TYPE_NEO:
                 Glide.with(context)
@@ -74,13 +73,13 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.HistoryH
         return results == null ? 0 : results.size();
     }
 
-    public class HistoryHolder extends RecyclerView.ViewHolder {
+    class HistoryHolder extends RecyclerView.ViewHolder {
         ImageView ivLogo;
         TextView tvTime;
         TextView tvTitle;
         Button btnView;
 
-        public HistoryHolder(@NonNull View itemView) {
+        HistoryHolder(@NonNull View itemView) {
             super(itemView);
             ivLogo = itemView.findViewById(R.id.iv_logo);
             tvTime = itemView.findViewById(R.id.tv_time);

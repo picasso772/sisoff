@@ -8,9 +8,11 @@ import android.view.Window;
 import android.widget.Toast;
 
 import com.github.ybq.android.spinkit.style.CubeGrid;
+import com.google.android.material.snackbar.Snackbar;
 
 import androidx.core.content.ContextCompat;
 import androidx.lifecycle.ViewModelProviders;
+
 import dev147.com.vn.projectpsychological.R;
 import longnd.com.vn.thesis.data.base.ObjectResponse;
 import longnd.com.vn.thesis.data.entity.User;
@@ -44,7 +46,7 @@ public class SplashActivity extends BaseActivity<SplashViewModel, ActivitySplash
         CubeGrid stylePro = new CubeGrid();
         binding.progressBar.setIndeterminateDrawable(stylePro);
         if (!NetworkUtils.isNetworkAvailable(this)) {
-            Log.d("QUANGANHs", "initData: Khoong cos ke noi");
+            Log.d(SplashActivity.class.getSimpleName(), "initData: Không có kết nối mạng");
         }
         viewModel = ViewModelProviders.of(this, viewModelFactory).get(SplashViewModel.class);
         customerViewModel = ViewModelProviders.of(this, viewModelFactory).get(CustomerViewModel.class);
@@ -101,7 +103,6 @@ public class SplashActivity extends BaseActivity<SplashViewModel, ActivitySplash
         }
         switch (booleanObjectResponse.getStatus()) {
             case Define.ResponseStatus.LOADING:
-                Log.d("QUANGANHs", "observeSaveQuestion: loading");
                 break;
             case Define.ResponseStatus.SUCCESS:
                 viewModel.setIsInsertListQuestionSuccess(null);
@@ -110,7 +111,8 @@ public class SplashActivity extends BaseActivity<SplashViewModel, ActivitySplash
                 openWorkingScreen();
                 break;
             case Define.ResponseStatus.ERROR:
-                Log.d("QUANGANHs", "observeSaveQuestion: error");
+                Toast.makeText(this, "Đã có lỗi trong quá trình lấy dữ liệu câu hỏi!", Toast.LENGTH_SHORT).show();
+                openWorkingScreen();
                 break;
             default:
                 break;
@@ -137,25 +139,7 @@ public class SplashActivity extends BaseActivity<SplashViewModel, ActivitySplash
                 break;
             case Define.ResponseStatus.ERROR:
                 Toast.makeText(this, "Rất tiếc, việc lấy dữ liệu đã xảy ra lỗi!", Toast.LENGTH_SHORT).show();
-                break;
-            default:
-                break;
-        }
-    }
-
-    private void observeCountCustomerSaveDb(ObjectResponse<Long> integerObjectResponse) {
-        switch (integerObjectResponse.getStatus()) {
-            case Define.ResponseStatus.LOADING:
-                break;
-            case Define.ResponseStatus.SUCCESS:
-                int count = integerObjectResponse.getData().intValue();
-                if (count == Fields.NO_DATA) {
-                    // no data
-
-                    return;
-                }
-                break;
-            case Define.ResponseStatus.ERROR:
+                openWorkingScreen();
                 break;
             default:
                 break;

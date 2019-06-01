@@ -131,12 +131,8 @@ public class SplashViewModel extends ViewModel {
     public void saveData(Context context) {
         List<Question> questions;
         questions = readDataPsy(context, Define.Question.TYPE_PSY_POCHOLIGICAL);
-        for (Question question : readDataNeo(context, Define.Question.TYPE_NEO)) {
-            questions.add(question);
-        }
-        for (Question question : readDataRiasec(context, Define.Question.TYPE_RIASEC)) {
-            questions.add(question);
-        }
+        questions.addAll(readDataNeo(context, Define.Question.TYPE_NEO));
+        questions.addAll(readDataRiasec(context, Define.Question.TYPE_RIASEC));
         if (questions.size() != 0) {
             compositeDisposable.add(
                     questionRepository.insertListQuestionss(questions)

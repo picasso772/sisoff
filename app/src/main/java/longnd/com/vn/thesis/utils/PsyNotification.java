@@ -39,7 +39,6 @@ public class PsyNotification {
             if (dialog.getWindow() != null) {
                 dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
             }
-            // binding.ivMessage.setTypeface(Utils.getTypeFace(context, Fields.FONT_NABILA));
             binding.tvMessage.setText(message);
         }
     }
